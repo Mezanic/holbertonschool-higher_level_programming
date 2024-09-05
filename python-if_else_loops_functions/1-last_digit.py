@@ -3,9 +3,10 @@ import random
 number = random.randint(-10000, 10000)
 
 if number < 0:
-    number = number * -1
+    last_digit = number % -10
 
-last_digit = number % 10
+else:
+    last_digit = number % 10
 
 ls_d = last_digit
 
