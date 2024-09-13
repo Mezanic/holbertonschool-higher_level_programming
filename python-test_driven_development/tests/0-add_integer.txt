@@ -29,3 +29,11 @@
 
 >>> add_integer(2.48)
 100
+
+>>> add_integer("hey", 9)
+Traceback (most recent call last):
+TypeError: a must be an integer
+
+>>> add_integer(9, "hey")
+Traceback (most recent call last):
+TypeError: b must be an integer
