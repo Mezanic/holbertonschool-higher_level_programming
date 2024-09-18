@@ -8,12 +8,8 @@ class Square:
     Class define Square with private instance attribut
 
     Attribut :
-
     size (int) : size of the square
-    area (int) : area of a square
-
     """
-
 
     def __init__(self, size=0):
         """
@@ -22,7 +18,7 @@ class Square:
         Args:
             size (int): size of the square
         """
-    self.__size = size
+        self.size = size
 
     @property
     def size(self):
@@ -30,7 +26,7 @@ class Square:
         Define the size of square
 
         Return
-        size of square
+            size of the square as int
         """
         return self.__size
 
@@ -38,6 +34,9 @@ class Square:
     def size(self, value):
         """
         Define the size of square with validation check
+
+        Args:
+            value(int): Value for the size of the square
 
 
         Raise:
