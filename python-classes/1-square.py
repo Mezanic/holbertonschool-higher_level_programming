@@ -5,12 +5,10 @@
 
 class Square:
     """
-    Class define Square with private instance attribut
+    Define Square
 
-    Attribut :
-
-    size (int) : size of the square
-
+    Attributes:
+        size (int): size of the square
     """
 
 
@@ -19,6 +17,6 @@ def __init__(self, size):
     Initializes a  size of the square.
 
     Args:
-    size (int): size of the square
+        size (int): size of the square
     """
     self.__size = size
