@@ -1,10 +1,8 @@
 #!/usr/bin/python3
 
-""" Create a empty class Square"""
+""" This module class Square"""
 
 
-class square:
-    """
-    This class define a Square
-    """
+class Square:
+    """ This class define a Square"""
     pass

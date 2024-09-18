@@ -3,7 +3,7 @@
 """Module define a  class Square"""
 
 
-class square:
+class Square:
     """
     Class define Square with private instance attribut
 
