@@ -14,7 +14,6 @@ class Square:
 
     """
 
-
     def __init__(self, size=0):
         """
         Initializes a  size of the square.
@@ -35,13 +34,13 @@ class Square:
 
         self.__size = size
 
-        def area(self):
-            """
-            Function calculate the area of a square
+    def area(self):
+        """
+        Function calculate the area of a square
 
-            Return:
+        Return:
 
             Area of a Square
-            """
+        """
 
         return self.__size ** 2
