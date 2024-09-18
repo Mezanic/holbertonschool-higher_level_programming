@@ -14,7 +14,6 @@ class Square:
 
     """
 
-
     def __init__(self, size=0, position=(0, 0)):
         """
         Initializes a  size of the square.
@@ -23,8 +22,8 @@ class Square:
         size (int): size of the square
         position (int): Position of square
         """
-        self.__size = size
-        self.__position = position
+        self.size = size
+        self.position = position
 
     @property
     def size(self):
@@ -89,7 +88,7 @@ class Square:
 
         Area of a Square
         """
-        
+
         return self.__size ** 2
 
     def my_print(self):
