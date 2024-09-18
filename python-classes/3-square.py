@@ -15,34 +15,35 @@ class Square:
     """
 
 
-def __init__(self, size=0):
-    """
-    Initializes a  size of the square.
-
-    Args:
-    size (int): size of the square
-
-    Raise:
-    TypeError size must be an integer
-    ValueError size must be >= 0
-
-    """
-    if not isinstance(size, int):
-        raise TypeError("size must be an integer")
-
-    if size < 0:
-        raise ValueError("size must be >= 0")
-
-    self.__size = size
-
-    def area(self):
+    def __init__(self, size=0):
         """
-        Function calculate the area of a square
+        Initializes a  size of the square.
 
-        Return:
+        Args:
+        size (int): size of the square
 
-        Area of a Square
+        Raise:
+        TypeError size must be an integer
+        ValueError size must be >= 0
+
         """
+        if not isinstance(size, int):
+            raise TypeError("size must be an integer")
+
+        if size < 0:
+            raise ValueError("size must be >= 0")
+
+        self.__size = size
+
+        def area(self):
+            """
+            Function calculate the area of a square
+
+            Return:
+
+            Area of a Square
+            """
+        
         square_aera = size * size
 
         return square_aera

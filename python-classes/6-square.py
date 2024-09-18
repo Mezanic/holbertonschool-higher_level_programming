@@ -15,16 +15,16 @@ class Square:
     """
 
 
-def __init__(self, size=0, position=(0, 0)):
-    """
-    Initializes a  size of the square.
+    def __init__(self, size=0, position=(0, 0)):
+        """
+        Initializes a  size of the square.
 
-    Args:
-    size (int): size of the square
-    position (int): Position of square
-    """
-    self.__size = size
-    self.__position = position
+        Args:
+        size (int): size of the square
+        position (int): Position of square
+        """
+        self.__size = size
+        self.__position = position
 
     @property
     def size(self):
@@ -41,10 +41,10 @@ def __init__(self, size=0, position=(0, 0)):
             TypeError size must be an integer
             ValueError size must be >= 0
         """
-        if not isinstance(size, int):
+        if not isinstance(value, int):
             raise TypeError("size must be an integer")
 
-        if size < 0:
+        if value < 0:
             raise ValueError("size must be >= 0")
 
         self.__size = value
@@ -89,9 +89,8 @@ def __init__(self, size=0, position=(0, 0)):
 
         Area of a Square
         """
-        square_aera = size * size
-
-        return square_aera
+        
+        return self.__size ** 2
 
     def my_print(self):
         """ Print square with # character """

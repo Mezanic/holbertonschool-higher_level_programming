@@ -12,11 +12,11 @@ class Square:
     """
 
 
-def __init__(self, size):
-    """
-    Initializes a  size of the square.
+    def __init__(self, size):
+        """
+        Initializes a  size of the square.
 
-    Args:
+        Args:
         size (int): size of the square
-    """
-    self.__size = size
+        """
+        self.__size = size
