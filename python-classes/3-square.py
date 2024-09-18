@@ -43,7 +43,5 @@ class Square:
 
             Area of a Square
             """
-        
-        square_aera = size * size
 
-        return square_aera
+        return self.__size ** 2
