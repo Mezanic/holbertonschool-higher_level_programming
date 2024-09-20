@@ -118,4 +118,4 @@ class Rectangle:
 
     def __repr__(self):
         """ String for represente the Rectangle height and width"""
-        return "Rectangle ({}, {})".format(self.width, self.height)
+        return "Rectangle({}, {})".format(self.width, self.height)
