@@ -110,4 +110,8 @@ class Rectangle:
 
     def __str__(self):
         """String representation of the Rectangle with '#' character"""
+
+        if self.__width == 0 or self.__height == 0:
+            return ""
+
         return '\n'.join('#' * self.__width for i in range(self.__height))
