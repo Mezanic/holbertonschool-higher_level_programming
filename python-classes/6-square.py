@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 
-"""Module define a  class Square"""
+"""Module define a class Square"""
 
 
 class Square:
@@ -88,7 +88,7 @@ class Square:
 
         Return:
 
-        Area of a Square
+            Area of a Square
         """
 
         return self.__size ** 2
@@ -96,11 +96,11 @@ class Square:
     def my_print(self):
         """ Print square with # character """
 
-        if self.__size == 0:
+        if self.size == 0:
             print("")
 
         else:
-            print("\n" * self.__position[1], end="")
+            print("\n" * self.position[1], end="")
 
-            for i in range(self.__size):
-                print(" " * self.__position[0] + "#" * self.__size)
+            for i in range(self.size):
+                print(" " * self.position[0] + "#" * self.size)
