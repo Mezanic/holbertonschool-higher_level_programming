@@ -49,8 +49,7 @@ class Rectangle(BaseGeometry):
 
     def __str__(self):
         """ Return a string with theight andf the width of the rectangle"""
-        class_name = self.__class__.__name__
-        return "[{}] {}/{}" .format(class_name, self.__width, self.__height)
+        return "[Rectangle] {}/{}" .format(self.__width, self.__height)
 
 
 class Square(Rectangle):
