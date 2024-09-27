@@ -10,7 +10,9 @@ Exception: area() is not implemented
 
 >>> bg.integer_validator("width", 89)
 
->>> bg.integer_validator("", 1)
+>>> bg.integer_validator("name", "John")
+Traceback (most recent call last):
+TypeError: name must be an integer
 
 >>> bg.integer_validator("age", 0)
 Traceback (most recent call last):
@@ -20,40 +22,48 @@ ValueError: age must be greater than 0
 Traceback (most recent call last):
 ValueError: distance must be greater than 0
 
->>> bg.integer_validator("average", 7.8)
+>>> bg.integer_validator("average", 1.2)
 Traceback (most recent call last):
 TypeError: average must be an integer
 
->>> bg.integer_validator("name", "John")
+>>> bg.integer_validator("list", [1, 2, 3])
 Traceback (most recent call last):
-TypeError: name must be an integer
+TypeError: list must be an integer
 
->>> bg.integer_validator("name", "5")
+>>> bg.integer_validator("dict", {"key": "value"})
 Traceback (most recent call last):
-TypeError: name must be an integer
+TypeError: dict must be an integer
 
->>> bg.integer_validator("test", 1)
-
->>> bg.integer_validator("test", (1,))
+>>> bg.integer_validator("tuple", (1, 2))
 Traceback (most recent call last):
-TypeError: test must be an integer
+TypeError: tuple must be an integer
 
->>> bg.integer_validator("test", [3])
+>>> bg.integer_validator("set", {1, 2, 3})
 Traceback (most recent call last):
-TypeError: test must be an integer
+TypeError: set must be an integer
 
->>> bg.integer_validator("test", True)
+>>> bg.integer_validator("bool", True)
 Traceback (most recent call last):
-TypeError: test must be an integer
+TypeError: bool must be an integer
 
->>> bg.integer_validator("test", {3, 4})
+>>> bg.integer_validator("none", None)
 Traceback (most recent call last):
-TypeError: test must be an integer
+TypeError: none must be an integer
 
->>> bg.integer_validator("test", None)
+>>> bg.integer_validator("infinity", float('inf'))
 Traceback (most recent call last):
-TypeError: test must be an integer
+TypeError: infinity must be an integer
 
->>> bg.integer_validator("test", {3: 4})
+>>> bg.integer_validator("nan", float('nan'))
 Traceback (most recent call last):
-TypeError: test must be an integer
+TypeError: nan must be an integer
+
+>>> bg.integer_validator("min int", -2**31)
+Traceback (most recent call last):
+ValueError: min int must be greater than 0
+
+>>> print(BaseGeometry.__doc__)
+A class BaseGeometry based on 6-base_geometry.py
+
+>>> print(BaseGeometry.area.__doc__)
+Raises an Exception with the message area() is not implemented
