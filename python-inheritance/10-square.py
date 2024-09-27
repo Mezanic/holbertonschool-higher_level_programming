@@ -66,7 +66,11 @@ class Square(Rectangle):
         self.integer_validator("size", size)
         super().__init__(size, size)
         self.__size = size
-
+        
+    def area(self):
+        """Calculates the area of a Rectangle object"""
+        return self.__size ** 2
+    
     def __str__(self):
         """Print a string for square with rectangle in it """
         return "[Rectangle] {}/{}" .format(self.__size, self.__size)
