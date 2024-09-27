@@ -8,7 +8,7 @@ class Square(Rectangle):
 
     def __init__(self, size):
         """Initializes a Rectangle object
-        
+
         Args:
             size: size of the square
         """
@@ -21,5 +21,5 @@ class Square(Rectangle):
         return self.__size ** 2
 
     def __str__(self):
-        """Returns a string representation of a square object named rectangle"""
+        """Return a string representation of a square object named rectangle"""
         return "[Rectangle] {}/{}".format(self.__size, self.__size)
