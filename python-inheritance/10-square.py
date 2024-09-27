@@ -56,8 +56,17 @@ class Square(Rectangle):
     """Class Square inherit from Rectangle"""
 
     def __init__(self, size):
-        """Initialize Square object"""
+        """
+        Constructor for  Square
 
-        self.__size = size
+        Args:
+            size: size of square
+        """
+
         self.integer_validator("size", size)
         super().__init__(size, size)
+        self.__size = size
+
+    def __str__(self):
+        """Print a string for square with rectangle in it """
+        return "[Rectangle] {}/{}" .format(self.__size, self.__size)
