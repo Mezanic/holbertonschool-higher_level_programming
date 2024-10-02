@@ -32,9 +32,7 @@ class Student:
             new_dict = {}
 
             for key in attrs:
-
-                for key in self.__dict__:
-
+                if key in self.__dict__:
                     new_dict[key] = self.__dict__[key]
 
             return new_dict
