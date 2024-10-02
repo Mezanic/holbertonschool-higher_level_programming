@@ -24,12 +24,13 @@ class Student:
         Args:
             attrs: List of string.
         """
-        new_dict = {}
 
         if attrs is None:
             return self.__dict__
 
         else:
+            new_dict = {}
+
             for key in attrs:
 
                 for key in self.__dict__:
