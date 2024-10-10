@@ -20,23 +20,22 @@ def fetch_and_print_posts():
 
 
 def fetch_and_save_posts():
-    """ 
+    """
     Function for structure the data into a list of dictionaries
     and write in a csv files
     """
 
     if response:
         posts = response.json()
-        
+
         data = [{
             "id": post["id"],
             "title": post["title"],
             "body": post["body"]
-            } for post in posts]
-    
+        } for post in posts]
+
     with open("post.csv", mode="w", newline="") as csvfile:
-        fieldnames = ["id","title", "body"]
+        fieldnames = ["id", "title", "body"]
         writer = csv.DictWriter(csvfile, fieldnames=fieldnames)
         writer.writeheader()
         writer.writerows(data)
-        
