@@ -5,11 +5,11 @@
 import csv
 import requests
 
+response = requests.get("https://jsonplaceholder.typicode.com/posts")
+
 
 def fetch_and_print_posts():
     """ Function to print title of post in jsonplaceholder """
-
-    response = requests.get("https://jsonplaceholder.typicode.com/posts")
 
     print(f"Status Code: {response.status_code}")
 
@@ -24,8 +24,6 @@ def fetch_and_save_posts():
     Function for structure the data into a list of dictionaries
     and write in a csv files
     """
-
-    response = requests.get("https://jsonplaceholder.typicode.com/posts")
 
     if response.status_code == 200:
         posts = response.json()
