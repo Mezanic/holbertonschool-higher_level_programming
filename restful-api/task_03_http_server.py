@@ -11,9 +11,10 @@ PORT = 8000
 
 
 class RequestHandler(http.server.BaseHTTPRequestHandler):
+    """Class to handle simple request"""
 
     def do_GET(self):
-        """Class to define the Get method"""
+        """Function define the Get method"""
 
         match self.path:
 
