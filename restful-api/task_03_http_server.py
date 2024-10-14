@@ -1,10 +1,8 @@
 #!/usr/bin/python3
-
 """Module to create my first simple web server """
 
 
 import http.server
-import socketserver
 import json
 
 PORT = 8000
@@ -58,6 +56,7 @@ class RequestHandler(http.server.BaseHTTPRequestHandler):
                 self.wfile.write(b"Endpoint not found")
 
 
-with socketserver.TCPServer(("", PORT), RequestHandler) as httpd:
-    print("serving at port", PORT)
-    httpd.serve_forever()
+if __name__ == "__main__":
+    with http.server.HTTPServer(("", PORT), RequestHandler) as httpd:
+        print(f"Serving on port {PORT}...")
+        httpd.serve_forever()
