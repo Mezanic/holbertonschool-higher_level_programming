@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"""Module"""
+"""This Module create a flask API"""
 
 from flask import Flask
 from flask import jsonify
@@ -14,26 +14,26 @@ users = {}
 
 @app.route("/")
 def home():
-    """Func"""
+    """Root of the API"""
     return "Welcome to the Flask API!"
 
 
 @app.route("/data")
-def data():
-    """func"""
+def get_data_username():
+    """"""
     user_list = list(users.keys())
     return jsonify(user_list)
 
 
 @app.route("/status")
 def status():
-    """func"""
+    """Endpoint to return the status of API"""
     return "OK"
 
 
 @app.route("/users/<username>")
 def retrieve_users(username):
-    """func"""
+    """return the profile of user"""
     if users.get(username):
         return users.get(username)
 
@@ -43,12 +43,12 @@ def retrieve_users(username):
 
 @app.route("/add_user", methods=["POST"])
 def add_user():
-    """func"""
+    """Add new user"""
     new_user = request.get_json()
     username = new_user.get('username')
 
     if not username:
-        return jsonify('{"error":"Username is required"}'), 400
+        return jsonify({"error": "Username is required"}), 400
 
     else:
         users[username] = new_user
@@ -56,4 +56,4 @@ def add_user():
 
 
 if __name__ == "__main__":
-    app.run()
+    app.run(debug=True)
