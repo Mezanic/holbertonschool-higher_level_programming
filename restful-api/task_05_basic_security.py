@@ -1,4 +1,5 @@
 #!/usr/bin/python3
+""" Documentation here"""
 
 from werkzeug.security import generate_password_hash, check_password_hash
 from flask import Flask, jsonify, request
@@ -54,7 +55,6 @@ jwt = JWTManager(app)
 
 @app.route("/login", methods=["POST"])
 def login():
-
     username = request.json.get("username", None)
     password = request.json.get("password", None)
 
