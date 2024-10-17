@@ -81,13 +81,12 @@ def jwt_protected():
 @app.route("/admin-only", methods=["GET"])
 @jwt_required()
 def admin_only():
-
-    current_user = get_jwt_identity
+    current_user = get_jwt_identity()
 
     if current_user not in users:
         return jsonify({"error": "User not found"}), 404
 
-    if current_user["role"] != "admin":
+    if users[current_user]['role'] != 'admin':
         return jsonify({"error": "Admin access required"}), 403
 
     return "Admin Access: Granted"
