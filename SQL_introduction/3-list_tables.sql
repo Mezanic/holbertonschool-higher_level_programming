@@ -1,2 +1,2 @@
---List tables of my SQL server 
-SHOW TABLES;
+--List tables of mysql databases
+SHOW TABLES FROM mysql;
