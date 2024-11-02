@@ -16,7 +16,8 @@ if __name__ == "__main__":
         port=3306
     )
     cursor = db.cursor()
-    cursor.execute(f"SELECT * FROM states WHERE name = '{looked_state}' ORDER BY id ASC")
+    cursor.execute(
+        f"SELECT * FROM states WHERE name = '{looked_state}' ORDER BY id ASC")
     states = cursor.fetchall()
     for state in states:
         if state[1] == sys.argv[4]:
