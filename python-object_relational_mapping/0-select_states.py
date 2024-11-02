@@ -7,7 +7,7 @@ import MySQLdb
 
 
 if __name__ == "__main__":
-    
+
     # Connect to database and set up
     db = MySQLdb.connect(
         host="localhost",
