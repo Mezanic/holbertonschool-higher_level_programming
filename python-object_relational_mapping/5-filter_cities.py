@@ -27,7 +27,7 @@ import sys
 
 if __name__ == "__main__":
     """Main entry point"""
-
+    
     username = sys.argv[1]
     password = sys.argv[2]
     database_name = sys.argv[3]
@@ -40,11 +40,15 @@ if __name__ == "__main__":
         db=database_name,
         port=3306
     )
+
     cursor = db.cursor()
 
-    query = "SELECT cities.name FROM cities JOIN states \
-                    ON cities.state_id = states.id \
-                    WHERE states.name = %s ORDER BY cities.id ASC"
+    query = """
+            SELECT cities.name FROM cities
+            JOIN states ON cities.state_id = states.id
+            WHERE states.name = %s
+            ORDER BY cities.id ASC
+        """
     cursor.execute(query, (state_name,))
     cities = cursor.fetchall()
 
