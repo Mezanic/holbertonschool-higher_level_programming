@@ -22,15 +22,19 @@ input in ascending order by id.
 import sys
 import MySQLdb
 
-looked_state = sys.argv[4]
-
 if __name__ == "__main__":
+
+    username = sys.argv[1]
+    password = sys.argv[2]
+    database_name = sys.argv[3]
+    looked_state = sys.argv[4]
+
     db = MySQLdb.connect(
         host="localhost",
-        user=sys.argv[1],
-        passwd=sys.argv[2],
-        db=sys.argv[3],
-        port=3306
+        port=3306,
+        user=username,
+        passwd=password,
+        db=database_name
     )
     cursor = db.cursor()
     query = "SELECT * FROM states WHERE name = %s ORDER BY id ASC"
