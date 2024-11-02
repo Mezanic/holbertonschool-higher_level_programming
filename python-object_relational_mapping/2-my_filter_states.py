@@ -20,7 +20,7 @@ if __name__ == "__main__":
         "SELECT * FROM states WHERE name = '{}' ORDER BY id ASC" .format(looked_state))
     states = cursor.fetchall()
     for state in states:
-        if state[1] == sys.argv[4]:
+        if state[1] == looked_state:
             print(state)
     cursor.close()
     db.close()
