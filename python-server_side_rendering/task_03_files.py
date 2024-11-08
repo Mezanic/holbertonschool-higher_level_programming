@@ -5,9 +5,11 @@ import csv
 
 app = Flask(__name__)
 
+
 def parse_json(file_path):
     with open(file_path, 'r') as file:
         return json.load(file)
+
 
 def parse_csv(file_path):
     products = []
@@ -35,11 +37,13 @@ def display_products():
 
     if product_id:
         product_id = int(product_id)
-        products = [product for product in products if product['id'] == product_id]
+        products = [
+            product for product in products if product['id'] == product_id]
         if not products:
             return render_template('product_display.html')
 
     return render_template('product_display.html', products=products)
 
+
 if __name__ == '__main__':
-    app.run(debug=True , port=5000)
+    app.run(debug=True, port=5000)
