@@ -15,10 +15,10 @@ def parse_csv(file_path):
     products = []
     with open(file_path, 'r') as file:
         reader = csv.DictReader(file)
-
         for row in reader:
+            row['id'] = int(row['id'])
+            row['price'] = float(row['price'])
             products.append(row)
-
     return products
 
 
