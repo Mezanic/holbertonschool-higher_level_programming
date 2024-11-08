@@ -37,7 +37,8 @@ def generate_invitations(template, attendees):
         return e
 
     for index, attendee in enumerate(attendees, start=1):
-
+        output_content = template
+         
         for key in ["name", "event_title", "event_date", "event_location"]:
 
             placeholder = "{" + key + "}"
@@ -46,12 +47,11 @@ def generate_invitations(template, attendees):
             if value is None:
                 value = "N/A"
 
-            output_content = template
             output_content = output_content.replace(placeholder, value)
-            filename = f"output_{index}.txt"
+        filename = f"output_{index}.txt"
 
         if os.path.exists(filename):
-            print(f"Wraning: {filename} already exists.")
+            print(f"Warning: {filename} already exists.")
             continue
 
         with open(filename, 'w') as new_file:
